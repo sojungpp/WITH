@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head><title>WITH</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Simple Multi-Item Slider: Category slider with CSS animations" />
+		<meta name="keywords" content="jquery plugin, item slider, categories, apple slider, css animation" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/modernizr.custom.63321.js"></script>
+<link rel="stylesheet" href="index.css">
+</head>
+<body onload="popup('popup.html')">
+<script>
+    function webCookie(name) {
+        var cookie = document.cookie;
+        if (document.cookie != "") {
+            var cookies = cookie.split("; ");
+            for ( var index in cookies) {
+                var cookie_name = cookies[index].split("=");
+                if (cookie_name[0] == "popupYN") {
+                    return cookie_name[1]; 
+                    } 
+            } 
+        } 
+        return ; 
+    }
+
+    function popup(url) {
+        var cookieCheck = webCookie("popupYN");
+        if (cookieCheck != "N") window.open(url, '', 'width=460,height=450,left=100,top=100')
+    }
+</script>
+
+<header>
+        <div class = "main">
+            <div class="logo">
+                <a href="index.html">WITH</a>
+                
+            </div>
+            <ul class = "main_list">
+                <li><a href="login.html">로그인</a></li>
+                <li>/</li>
+                <li><a href="join.html">회원가입</a></li>
+            </ul>
+        </div>
+</header>
+<nav class="navbar">
+    <ul class = "navbar_list">
+        <li><a href="index.html">홈</a></li>
+        <li><a href="contest.html">공모전</a></li>
+        <li><a href="activity.html">대외활동</a></li>
+        <li><a href="community.html">커뮤니티</a></li>
+    </ul>
+</nav>
+<section id="showinform">
+    <div class="container">
+        <div class="main2">
+            <div id="mi-slider" class="mi-slider">
+                <ul>
+                    <li><a href="#"><img src="media/act7.jpg" alt="img01"><h4>D-1</h4></a></li>
+                    <li><a href="#"><img src="media/act9.jpg" alt="img02"><h4>D-2</h4></a></li>
+                    <li><a href="#"><img src="media/act8.jpg" alt="img03"><h4>D-3</h4></a></li>
+                </ul>
+                <ul>
+                    <li><a href="#"><img src="media/act2.jpg" alt="img05"><h4>D-4</h4></a></li>
+                    <li><a href="#"><img src="media/act3.jpg" alt="img06"><h4>D-5</h4></a></li>
+                    <li><a href="#"><img src="media/act8.jpg" alt="img07"><h4>D-6</h4></a></li>
+                    <li><a href="#"><img src="media/act4.jpg" alt="img08"><h4>D-7</h4></a></li>
+                </ul>
+                <ul>
+                    <li><a href="#"><img src="media/act1.jpg" alt="img09"><h4>D-1</h4></a></li>
+                    <li><a href="#"><img src="media/act2.jpg" alt="img10"><h4>D-2</h4></a></li>
+                    <li><a href="#"><img src="media/act3.jpg" alt="img11"><h4>D-3</h4></a></li>
+                </ul>
+                <ul>
+                    <li><a href="#"><img src="media/act4.jpg" alt="img12"><h4>D-4</h4></a></li>
+                    <li><a href="#"><img src="media/act5.jpg" alt="img13"><h4>D-5</h4></a></li>
+                    <li><a href="#"><img src="media/act6.jpg" alt="img14"><h4>D-6</h4></a></li>
+                    <li><a href="#"><img src="media/act7.jpg" alt="img15"><h4>D-7</h4></a></li>
+                </ul>
+                <nav>
+                    <a href="contest.html">공모전(1~3)</a>
+                    <a href="contest.html">공모전(4~7)</a>
+                    <a href="activity.html">대외활동(1~3)</a>
+                    <a href="activity.html">대외활동(4~7)</a>
+                </nav>
+            </div>
+        </div>
+    </div>	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/jquery.catslider.js"></script>
+		<script>
+			$(function() {
+				$( '#mi-slider' ).catslider();
+			});
+		</script>
+</section>
+<section id="index_contents">
+    <div id="content_board">
+        <div id="special">
+    <article class="section2">
+        <div class="boards">
+            <h2>
+                <span><img src="media/team.png"> 팀원모집</span>
+                <a href="community.html" class="plus">+더보기</a>
+            </h2>
+            <ol class="boards_list">
+                <li><a href="commupost1.html">팀원 구합니다!</a></li>
+                <li><a href="">같이 할 사람</a></li>
+                <li><a href="">~공모전 참여 하실 분</a></li>
+                <li><a href="">공모전 같이 해요!!</a></li>
+                <li><a href="">대외활동 팀원 구합니다</a></li>
+            </ol>
+        </div>
+    </article>
+    <article class="section2">
+        <div class="boards">
+            <h2>
+                <span><img src="media/pencil.png"> 자유게시판</span>
+                <a href="board.html" id="plus2">+더보기</a>
+            </h2>
+            <ol class="boards_list">
+                <li><a href="">자유글</a></li>
+                <li><a href="">짜잔</a></li>
+                <li><a href="">웹프로그래밍</a></li>
+                <li><a href="">와아아</a></li>
+                <li><a href="">게시글</a></li>
+            </ol>
+        </div>
+    </article>
+</div>
+    <article class="activities">
+         <section id="wrap">
+                <h2><span><img src="media/trophy.png">인기 활동</span></h2>
+                    <ul class="activity_list">
+                            <li class="clearfix">
+                                    <div class="thumb-image">
+                                        <a href="contest.html"><img src="media/banner.png"></a>
+                                    </div>
+                                    <div class="thumb-txt">
+                                        <p>
+                                            <span class="special_host">금융보안원, 금융정보호협의회, 금융보안포럼</span>
+                                            <span class="special_count">D-84</span>
+                                        </p>
+                                        <div class="main-info">
+                                            <h4><a href="">제5회 금융보안원 논문 공모전</a></h4>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="thumb-image">
+                                    <a href=""><img src="media/banner2.png"></a>
+                                </div>
+                                <div class="thumb-txt">
+                                    <p>
+                                        <span class="special_host">우정사업본부</span>
+                                        <span class="special_count">D-93</span>
+                                    </p>
+                                    <div class="main-info">
+                                        <h4><a href="">2021 대한민국 편지쓰기 공모전</a></h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="thumb-image">
+                                    <a href=""><img src="media/banner3.png"></a>
+                                </div>
+                                <div class="thumb-txt">
+                                    <p>
+                                        <span class="special_host">환경부, 한국폐기물협회</span>
+                                        <span class="special_count">D-22</span>
+                                    </p>
+                                    <div class="main-info">
+                                        <h4><a href="">2021 음식물쓰레기 줄이기를 위한 영상 공모전(UCC)</a></h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="thumb-image">
+                                    <a href=""><img src="media/banner4.png"></a>
+                                </div>
+                                <div class="thumb-txt">
+                                    <p>
+                                        <span class="special_host">한국언론진흥재단</span>
+                                        <span class="special_count">D-19</span>
+                                    </p>
+                                    <div class="main-info">
+                                        <h4><a href="">2021 공익광고 공모전</a></h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="thumb-image">
+                                    <a href=""><img src="media/banner5.png"></a>
+                                </div>
+                                <div class="thumb-txt">
+                                    <p>
+                                        <span class="special_host">한국관광공사, 카카오</span>
+                                        <span class="special_count">D-17</span>
+                                    </p>
+                                    <div class="main-info">
+                                        <h4><a href="">2021 관광데이터 활용 공모전</a></h4>
+                                    </div>
+                                </div>
+                            </li>
+                    </ul>
+        </section>
+    </article>
+</div>
+</section>
+<aside id = "ads">
+    <a href="https://www.mju.ac.kr/sites/mjukr/intro/intro.html" target='_blank'><img src="media/ad1.png" class="ad"></a>
+    <a href="https://www.apple.com/kr-k12/shop" target='_blank'><img src="media/ad2.png" class="ad"></a>
+    <iframe class="ad" src="https://www.youtube.com/embed/izoe-W7lXng" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</aside>
+
+<footer>	
+    <ul class = "footer_list">
+        <li>(주)WITH<img src="media/logo.png"></li>
+        <li>사업자 등록번호 : 123-12-12345</li>
+        <li>대표 : 박소정, 이해진</li>
+        <li>고객 센터 : 8282-8282</li>
+        <li>COPYRIGHT 2021 웹프로그래밍 ALL RIGHTES RESERVED</li>
+    </ul>
+</footer> 
+</body>
+</html>

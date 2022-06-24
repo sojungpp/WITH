@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head><title>WITH</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="join.css">
+</head>
+<script>
+
+window.addEventListener('load', function() {
+		var signup = document.getElementById("signup");
+        var cancel = document.getElementById("cancel");
+
+        cancel.addEventListener('click', function() {
+            document.location.href="index.html";
+        })
+
+		signup.addEventListener('click', function() {
+    
+    var name = document.getElementById('name');
+    var id = document.getElementById('id');
+    var password1 = document.getElementById('password1');
+	var password2 = document.getElementById('password2');
+    var tel = document.getElementById('tel');
+    var email = document.getElementById('email');
+    var interest = document.getElementsByClassName("interest");
+    var agree = document.querySelectorAll('#agree');
+
+			var count = 0;
+			for (var k = 0; k < interest.length; k++) {
+				if (interest[k].checked) {
+					count++;
+				}
+			}
+
+            var count2 = 0;
+            for (var i = 0; i < agree.length; i++) {
+				if (agree[i].checked) {
+					count2++;
+				}
+			}
+            
+
+    if (name.value == '') {
+        alert('이름을 입력해주세요.');
+        name.focus();
+    } else if (id.value == '' || id.value.length < 4) {
+		alert('아이디를 4자 이상 입력해주세요.');
+		id.focus();
+	} else if (id.value.length > 11) {
+		alert('아이디를 10자 이하로 입력해주세요.');
+		id.focus();
+	} else if (password1.value.length < 6) {
+		alert('비밀번호를 숫자로 6자 이상 입력해주세요.');
+		password1.focus();
+	} else if (password1.value.length > 21) {
+		alert('비밀번호를 숫자로 20자 이하로 입력해주세요.');
+		password1.focus();
+	} else if (isNaN(password1.value)) {
+		alert('비밀번호를 숫자로 입력해주세요.');
+		password1.focus();
+	} else if (password1.value != password2.value) {
+		alert('비밀번호가 일치하지 않습니다.');
+		password2.focus();
+	} else if (tel.value == '') {
+		alert('전화번호를 입력해주세요.');
+		tel.focus();
+    } else if (email.value == '') {
+		alert('이메일을 입력해주세요.');
+		email.focus();
+    } else if (count < 2) {
+		alert("관심분야를 3개이상 체크해주세요.");
+		interest[0].focus();
+    } else if (count2 != 1) {
+		alert("약관에 동의해주세요.");
+		agree[0].focus();
+    } else {
+        alert("환영합니다 :)");
+        document.location.href="login.html";
+    }
+})
+})
+</script>
+<body>
+<header>
+        <div class = "main">
+            <div class="logo">
+                <a href="index.html">WITH</a>
+            </div>
+            <ul class = "main_list">
+                <li><a href="login.html">로그인</a></li>
+                <li>/</li>
+                <li><a href="join.html">회원가입</a></li>
+            </ul>
+        </div>
+</header>
+<nav class="navbar">
+    <ul class = "navbar_list">
+        <li><a href="index.html">홈</a></li>
+        <li><a href="contest.html">공모전</a></li>
+        <li><a href="activity.html">대외활동</a></li>
+        <li><a href="community.html">커뮤니티</a></li>
+    </ul>
+</nav>
+<section class="join_page">
+    <h1>회원가입</h1>
+    <div class="form">
+    <form class="join_form">
+    <input type="radio" id="join_individual" value="개인회원" name="jointype" checked><label>개인회원</label>
+    <input type="radio" id="join_company" value="기업회원" name="jointype"><label>기업회원</label><br>
+    <label>이름 <input type="text" id="name"></label><br>
+    <label>기업이름 <input type="text" id="companyname"></label><br>
+    <label>아이디 <input type="text" id="id" placeholder="4~12자/영문, 숫자 가능"></label><br>
+    <label>비밀번호 <input type="password" id="password1" placeholder="6~20자/숫자 조합"></label><br>
+    <label>비밀번호 확인 <input type="password" id="password2"></label><br>
+    <label>전화번호 <input type="tel" id="tel" placeholder="010-1234-5678"></label><br>
+    <label>이메일 <input type="email" id="email"></label><br>
+    <label>관심분야</label>
+    <label><input type="checkbox" class="interest">기획/아이디어 </label><label><input type="checkbox" class="interest">광고/마케팅 </label><label><input type="checkbox" id="check">영상/UCC/사진 </label>
+    <label><input type="checkbox" class="interest">디자인/웹툰 </label><label><input type="checkbox" class="interest">웹/모바일/IT<br>
+    <label><input type="checkbox" class="interest">게임/소프트웨어 </label><label><input type="checkbox" class="interest">문학/글/시나리오 </label><label><input type="checkbox" id="check">예체능/미술/음악 </label>
+    <label><input type="checkbox" class="interest">봉사활동 </label><label><input type="checkbox" class="interest">기타 </label><br>
+    <label>개인정보 수집 및 이용 동의 <input type="checkbox" id="agree"></label><br>
+    <input type="button" id="cancel" value="취소">&nbsp;<input type="button" id="signup" value="회원가입">
+    </form>
+    </div>
+    </section>
+
+    <footer>	
+        <ul class = "footer_list">
+            <li>(주)WITH<img src="media/logo.png"></li>
+            <li>사업자 등록번호 : 123-12-12345</li>
+            <li>대표 : 박소정, 이해진</li>
+            <li>고객 센터 : 8282-8282</li>
+            <li>COPYRIGHT 2021 웹프로그래밍 ALL RIGHTES RESERVED</li>
+        </ul>
+    </footer> 
+    
+</body>
+</html>

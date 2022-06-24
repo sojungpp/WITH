@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head><title>WITH</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+<script>
+window.addEventListener('load', function() {
+		var login = document.querySelector('#login');
+		
+		login.addEventListener('click', function() { 
+    
+    var id = document.getElementById("write_id");
+    var password = document.getElementById("write_pw");
+
+    if(id.value == '') {
+        alert('아이디를 입력해주세요');
+        id.focus();
+    } else if (password.value == '') {
+        alert('비밀번호를 입력해주세요');
+        password.focus();
+    } else {
+        alert("환영합니다 :)");
+        document.location.href="index.html";
+        }
+        })})
+
+</script>
+<header>
+        <div class = "main">
+            <div class="logo">
+                <a href="index.html">WITH</a>
+            </div>
+            <ul class = "main_list">
+                <li><a href="login.html">로그인</a></li>
+                <li>/</li>
+                <li><a href="join.html">회원가입</a></li>
+            </ul>
+        </div>
+</header>
+<nav class="navbar">
+    <ul class = "navbar_list">
+        <li><a href="index.html">홈</a></li>
+        <li><a href="contest.html">공모전</a></li>
+        <li><a href="activity.html">대외활동</a></li>
+        <li><a href="community.html">커뮤니티</a></li>
+    </ul>
+</nav>
+<section class="login_page">
+<h1>로그인</h1>
+<div class="form">
+<form class="login_form">
+<label><input type="text"  id="write_id" placeholder="아이디 입력"></label>
+<label><input type="password"  id="write_pw" placeholder="비밀번호 입력"></label>
+<input type="button" id="login" value="LOGIN">
+<p class="message">계정이 없으신가요? <a href="join.html">회원가입</a></p>
+</form>
+</div>
+</section>
+
+<footer>	
+    <ul class = "footer_list">
+        <li>(주)WITH<img src="media/logo.png"></li>
+        <li>사업자 등록번호 : 123-12-12345</li>
+        <li>대표 : 박소정, 이해진</li>
+        <li>고객 센터 : 8282-8282</li>
+        <li>COPYRIGHT 2021 웹프로그래밍 ALL RIGHTES RESERVED</li>
+    </ul>
+</footer> 
+        
+</body>
+</html>
